@@ -10,8 +10,12 @@ import sys
 genderCommand  = 'python guess.py --class_type age --model_type inception --model_dir ../_checkpoints/22801/ --face_detection_type dlib --face_detection_model shape_predictor_68_face_landmarks.dat                --filename ../_image_data/IMG_2593.png'
 genderCommand2 = 'python guess.py --class_type age --model_type inception --model_dir ../_checkpoints/22801/                            --face_detection_model ../darkflow/haar/haarcascade_frontalface_default.xml --filename ../_image_data/IMG_2593.png'
 
-genderCommand3 = 'python guess.py --class_type age --model_type inception --model_dir ../_checkpoints/22801/ --face_detection_type dlib --face_detection_model shape_predictor_68_face_landmarks.dat                --filename ' + sys.argv[0]
-genderCommand4 = 'python guess.py --class_type age --model_type inception --model_dir ../_checkpoints/22801/                            --face_detection_model ../darkflow/haar/haarcascade_frontalface_default.xml --filename ' + sys.argv[0]
+print("filename is " + sys.argv[1])
+
+genderCommand3 = 'python guess.py --class_type age --model_type inception --model_dir ../_checkpoints/22801/ --face_detection_type dlib --face_detection_model shape_predictor_68_face_landmarks.dat                --filename ' + sys.argv[1]
+genderCommand4 = 'python guess.py --class_type age --model_type inception --model_dir ../_checkpoints/22801/                            --face_detection_model ../darkflow/haar/haarcascade_frontalface_default.xml --filename ' + sys.argv[1]
+
+relativePath = '../rude-carnie/'
 
 p = subprocess.Popen(genderCommand2, stdout=subprocess.PIPE, shell=True)
  

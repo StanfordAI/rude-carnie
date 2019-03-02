@@ -9,10 +9,10 @@ import sys
 genderCommand  = 'python guess.py --class_type gender --model_type inception --model_dir ../_checkpoints/21936/ --face_detection_type dlib --face_detection_model shape_predictor_68_face_landmarks.dat                --filename ../_image_data/IMG_2593.png'
 genderCommand2 = 'python guess.py --class_type gender --model_type inception --model_dir ../_checkpoints/21936/                            --face_detection_model ../darkflow/haar/haarcascade_frontalface_default.xml --filename ../_image_data/IMG_2593.png'
 
-genderCommand3 = 'python guess.py --class_type gender --model_type inception --model_dir ../_checkpoints/21936/ --face_detection_type dlib --face_detection_model shape_predictor_68_face_landmarks.dat                --filename ' + sys.argv[0]
-genderCommand4 = 'python guess.py --class_type gender --model_type inception --model_dir ../_checkpoints/21936/                            --face_detection_model ../darkflow/haar/haarcascade_frontalface_default.xml --filename ' + sys.argv[0]
+genderCommand3 = 'python guess.py --class_type gender --model_type inception --model_dir ../_checkpoints/21936/ --face_detection_type dlib --face_detection_model shape_predictor_68_face_landmarks.dat                --filename ' + sys.argv[1]
+genderCommand4 = 'python guess.py --class_type gender --model_type inception --model_dir ../_checkpoints/21936/                            --face_detection_model ../darkflow/haar/haarcascade_frontalface_default.xml --filename ' + sys.argv[1]
 
-p = subprocess.Popen(genderCommand2, stdout=subprocess.PIPE, shell=True)
+p = subprocess.Popen(genderCommand4, stdout=subprocess.PIPE, shell=True)
  
 ## Talk with date command i.e. read data from stdout and stderr. Store this info in tuple ##
 ## Interact with process: Send data to stdin. Read data from stdout and stderr, until end-of-file is reached.  ##
