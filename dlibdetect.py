@@ -1,13 +1,13 @@
 from detect import ObjectDetector
-
+import random
 import dlib
 import cv2
 FACE_PAD = 50
 
 class FaceDetectorDlib(ObjectDetector):
     def __init__(self, model_name, basename='frontal-face', tgtdir='.'):
-        self.tgtdir = tgtdir
-        self.basename = basename
+        self.tgtdir = tgtdir #+ '/face_' + str(random.randint(100000000000,9999999999999)) 
+        self.basename = basename + '_' + str(random.randint(100000000000,9999999999999))
         self.detector = dlib.get_frontal_face_detector()
         self.predictor = dlib.shape_predictor(model_name)
 
